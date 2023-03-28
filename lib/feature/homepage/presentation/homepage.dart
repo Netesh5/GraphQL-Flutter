@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphqldemo/feature/homepage/data/respositories/geo_graphql_repo.dart';
+import 'package:graphqldemo/feature/homepage/presentation/widgets/querybuilder.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("GraphQL"),
       ),
-      body: graphQlRepo.query(),
+      body: QueryBuilder(),
     );
   }
 }
