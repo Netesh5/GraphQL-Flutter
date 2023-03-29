@@ -10,6 +10,12 @@ class QueryBuilder extends StatelessWidget {
     return Query(
         options: QueryOptions(document: gql(geoGraphQlRepo.documentNode)),
         builder: (result, {fetchMore, refetch}) {
+          if (result.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator.adaptive(),
+            );
+          }
+
           if (result.data == null) {
             return const Center(
               child: Text("No data found"),
